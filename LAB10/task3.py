@@ -1,6 +1,12 @@
+import os
 import matplotlib.pyplot as plt
 
-vowels = "aeiouAEIOU"
+vowels = "аеіиоуюяєАЕІИОУЮЯЄ"
+
+if not os.path.exists("text.txt"):
+    with open("text.txt", "w", encoding="utf-8") as f:
+        f.write("Настя Костерева приїхала з Новояворівська та забула ключі від хати.")
+    print("Створено text.txt.")
 
 with open("text.txt", "r", encoding="utf-8") as f:
     text = f.read()
@@ -19,4 +25,4 @@ plt.ylabel("Кількість")
 plt.savefig("hist.png")
 plt.close()
 
-print("hist.png збережено.")
+print("Готово! hist.png збережено.")
